@@ -1,0 +1,176 @@
+html{
+    font-family: sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+.header,
+.main{
+    /*
+    BY SELF
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #000000;
+    color: #ffffff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    */
+    max-width: 40rem;
+    padding: 1rem;
+    margin: 0rem auto;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 2rem 2rem 0rem 0rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.header__logo{
+    margin: 0; 
+    font-size: 1.5rem;
+}
+
+.header__link{
+    color: inherit;
+    /* align-self: center; */
+    /* align-items: center; */ /*NOT WORKING*/
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.header__link:hover{
+    color: #f9dba0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input{
+    width: 100%;
+    margin-bottom: 0.7rem;
+    border-color: #000000;
+    border-width: medium;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: bold;
+    resize: none;
+    font-size: 150%;
+}
+
+.form__button{
+    border: none;
+    background-color: #facc6f;
+    color: #000000;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.form__button:hover{
+    background-color: #f9dba0;
+}
+
+.dates{
+    max-width: inherit;
+    justify-content: space-between;
+    display: flex;
+    padding: 0.3rem;
+}
+
+.dates__value{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: large;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dates__value:not(.dates__value--center):hover{
+    background-color: #c7beac;
+}
+
+.dates__value--center{
+    background-color: #facc6f;
+}
+
+.habit-list{
+    max-width: inherit;
+}
+
+.habit__name{
+    display: block;
+    
+}
+
+.habit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff2d8;
+    border: 3px solid black;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.habit:not(.complete){
+    padding: 0px;
+}
+
+.habit__svg{
+    width: 1em;
+    height: 1em;
+}
+
+.habit__button{
+    max-width: inherit;
+}
+
+.habit__form{
+    width: 100%;
+}
+
+.habit__button{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: inherit;
+    border: none;
+    background-color: unset;
+    text-align: left;
+    cursor: pointer;
+}
+
+.habit__button:hover{
+    background-color: #ffe5b1;
+}

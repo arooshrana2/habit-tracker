@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block main_content %}
+    <section class="habit-list">
+        {% for habit in habits %}
+            {% set complete = habit["_id"] in completed %}
+            {% if complete %}
+                <div class="habit complete">
+                    <span class="habit__title">{{ habit["name"] }}</span>
+                    <span class="habit__svg">
+                        <svg xmlns="http://www.w3.org/2000/svg"><path d="M0 12.116l2.053-1.897c2.401 1.162 3.924 2.045 6.622 3.969 5.073-5.757 8.426-8.678 14.657-12.555l.668 1.536c-5.139 4.484-8.902 9.479-14.321 19.198-3.343-3.936-5.574-6.446-9.679-10.251z"/></svg>
+                    </span>
+                </div>
+            {% else %}
+                <div class="habit">
+                    <form method="POST" class="habit__form" action="{{ url_for('habits.complete') }}">
+                        <input type="hidden" name="date" value="{{ selected_date }}"/>
+                        <input type="hidden" name="habitId" value="{{ habit['_id'] }}"/>
+                        <button type="submit" class="habit__button">
+                            {{ habit["name"] }}
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endblock %}
